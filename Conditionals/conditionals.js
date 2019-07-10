@@ -110,6 +110,7 @@ const randomPerson = Math.random() > .5 ? "John" : "Felipe";
 
 
 let choice = process.argv[4];
+let message = process.argv[5];
 
 
 // If "choice" is NOT defined (recall how we did this with the "username" variable)
@@ -174,10 +175,8 @@ if (choice == undefined) {
     if (item == "paint") {
         console.log("You boldy protest by painting a pro-android message...");
 
-        let message = process.argv[5];
-
         if (message != undefined) {
-            console.log(`..."${message.toUpperCase()}""`);
+            console.log(`..."${message.toUpperCase()}"`);
 
         } else {
             console.log(`..."WE ARE ALIVE"`);
@@ -203,21 +202,39 @@ if (choice == undefined) {
 // that scope are inaccessible to the world outside of those brackets
 
 // Create a variable "score" and set it equal to 0
-
 // Add "money" and "health" to "score"
-
 // If "choice" is defined, add 10 points to "score"
 // NOTE: Recall where "choice" was initialized (created). What scope was it in?
 // The global scope! So all of your code has access to it.
-
 // if "message" is defined, add 10 points to "score"
 // NOTE: Recall where "message" was initialized/created. 
 // It's within curly brackets! 
 // Alter your code so that "message" is initialized  in the global space 
 // right alongside "choice"
 
+
+let score = 0;
+
+score += money + health;
+
+if (choice != undefined) {
+    score += 10;
+
+}
+
+if (message != undefined) {
+    score += 10;
+
+}
+
+
+
+
 //////////////////////
 // STORY CONCLUSION //
 //////////////////////
 // console.log("The end");
 // console.log(`Score: ${score}`);
+
+console.log("The end.");
+console.log(`Score: ${score}.`);
