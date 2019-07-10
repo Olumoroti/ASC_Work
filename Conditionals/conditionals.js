@@ -20,7 +20,6 @@
 // Then try 'node conditional.js Marcus'
 
 
-
 let username = process.argv[2];
 
 if (username != undefined) {
@@ -28,7 +27,6 @@ if (username != undefined) {
 } else {
     console.log("You must provide a username.");
 }
-
 
 
 /////////////////////////////////
@@ -63,8 +61,28 @@ let item = process.argv[3];
 
 if (item == "jacket") {
     money -= 40;
-    console.log("You bought a jacket");
+    health += 20;
+    console.log("You bought a jacket.");
+
+} else if (item == "candy") {
+    money -= 10;
+    console.log("You bought candy."); 
+
+} else if (item == "paint") {
+    money -= 30;
+    console.log("You bought paint."); 
+
+} else if (item == "hammer") {
+    money -= 70;
+    console.log("You bought a hammer.");
+
+} else {
+    console.log("You bought nothing.");
+
 }
+
+console.log("You have", money, "dollars left.");
+
 
 // console.log(`You have ${money} dollars left.`);
 
@@ -90,10 +108,13 @@ const randomPerson = Math.random() > .5 ? "John" : "Felipe";
 // Create a variable "choice" and set it equal to the user's third
 // command line argument
 
+
+let choice = process.argv[4];
+
+
 // If "choice" is NOT defined (recall how we did this with the "username" variable)
 //      - console.log("You shut down due to inactivity and get robbed of all your money");
 //      - reduce "money" to 0
-
 // Else if "choice" is NOT "run" AND "randomPerson" is "Felipe" 
 //      console.log("The protesters attack you...");
 //      - if "item" is NOT "jacket"
@@ -101,7 +122,6 @@ const randomPerson = Math.random() > .5 ? "John" : "Felipe";
 //      - else
 //          - console.log("...and Felipe, a fellow android, who would normally help doesn't recognize you with the jacket");
 //          - reduce "health" by 50
-
 // Else if "choice" is "run" AND "randomPerson" is "John" 
 //      - console.log("You run, but John, a human officer with an attitude and a heart of gold, finds you...");
 //      - if "item" is "hammer" OR "jacket"
@@ -109,7 +129,6 @@ const randomPerson = Math.random() > .5 ? "John" : "Felipe";
 //          - reduce "money" to 0
 //      - else
 //          - console.log("...and seeing you have no ill intent, John protects you from the protestors and lets you go.");
-
 // Else (technically this means you ran AND got Felipe OR didn't run AND got John)
 //      - if "item" is "paint"
 //          - console.log("You boldy protest by painting a pro-android message...");
@@ -120,6 +139,59 @@ const randomPerson = Math.random() > .5 ? "John" : "Felipe";
 //              - console.log(`..."WE ARE ALIVE"`);
 //      - else
 //          - console.log(`Nothing interesting happens, but at least you got that ${item}`);
+
+
+if (choice == undefined) {
+    console.log("You shut down due to inactivity and get robbed of all your money.");
+    money = 0;
+
+} else if (choice != "run" && randomPerson == "Felipe") {
+    console.log("The protesters attack you...");
+
+    if (item != "jacket") {
+        console.log("...but Felipe, a fellow android shows up to help you escape them.");
+
+    } else {
+        console.log("...and Felipe, a fellow android who would normally help you, doesn't recognize you with the jacket.");
+        health -= 50;
+  
+    }
+
+} else if (choice == "run" && randomPerson == "John") {
+    console.log("You run, but John, a human officer with an attitude and a heart of gold, finds you...");
+
+    if (item == "hammer" || item == "jacket") {
+        console.log("...and holds you for questioning for suspicious activity.");
+        money = 0;
+        
+    } else {
+        console.log("...and seeing you have no ill intent, John protects you from the protestors and lets you go.");
+
+    }
+
+} else {
+
+    if (item == "paint") {
+        console.log("You boldy protest by painting a pro-android message...");
+
+        let message = process.argv[5];
+
+        if (message != undefined) {
+            console.log(`..."${message.toUpperCase()}""`);
+
+        } else {
+            console.log(`..."WE ARE ALIVE"`);
+
+        }
+
+    } else {
+        console.log(`Nothing interesting happens, but at least you got that ${item}.`);
+
+    }
+
+}
+
+
 
 ///////////
 // SCOPE //
