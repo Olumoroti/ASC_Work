@@ -67,7 +67,7 @@ if (catchAttempt < catchChance) {
 
 } else {
     console.log("Aargh! Almost had it!");
-    
+
 }
 
 
@@ -76,8 +76,11 @@ console.log("Challenge #5:");
 // If the number of pokemon in the "roster" array is less than 6
 // Add an empty string to the "roster" array (signifying an empty
 // spot)
-
 // Console.log the "roster" array
+
+
+
+
 
 // ==================================================================
 console.log("Challenge #6:");
