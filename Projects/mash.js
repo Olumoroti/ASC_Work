@@ -46,11 +46,19 @@ function getCar() {
     return arr[index];   
 }
 
+function deathNote() {
+    let death = randNum(120);
+    if(death <= 21) {
+        return 22;
+    } else {
+        return death;
+    }
+}
 
 
 
 function mash() {
-    return "You will live in a " + getHome() + ", and you will have " + getChildrenCount() + ", and you'll drive a " + getCar();
+    return "You will live in a " + getHome() + ", and you will have " + getChildrenCount() + ", and you'll drive a " + getCar() + " and you will DIE at " + deathNote();
 }
 
 console.log(mash());
