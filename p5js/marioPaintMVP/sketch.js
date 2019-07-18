@@ -22,9 +22,12 @@ function mouseDragged() {
     let pointerWidth = random(10, 50);
     let pointerHeight = random(10, 50);
     let pointerDiameter = random(10, 50);
+    let r = random(255);
+    let g = random(255);
+    let b = random(255);
 
     noStroke();
-    fill(255);
+    fill(r, g, b);
     if(checkShape == "ellipse") {
         ellipse(mouseX, mouseY, pointerWidth, pointerHeight);
     } else if (checkShape == "rect") {
