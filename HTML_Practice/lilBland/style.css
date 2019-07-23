@@ -1,0 +1,25 @@
+body {
+    text-align: center;
+
+}
+
+div {
+    margin: auto;
+    border: solid 6px silver;
+    width: 50%;
+    text-align: left;
+    background: gold;
+    
+}
+
+h3 span {
+    color: blue;
+    font-size: 42.0px;
+    text-transform: uppercase;
+
+}
+
+a {
+    color: goldenrod;
+}
+
